@@ -1,0 +1,19 @@
+careir portal 
+think out loud
+Create a procedure named 'getBillLevel' which takes 1 input parameter namely, bill_id int and 1 output parameter namely,
+level varchar2. This procedure should determine the level of the bill as either PLATINUM or GOLD based on the total units
+consumed for the month. This procedure should set the level as GOLD if the total units for the bill is less than 10000 units
+and the level is PLATINUM if the total units is greater than or equal to 10000 units.
+Hints:
+Procedure name :getBillLevel
+Parameters : bill
+id is type of int,level is type of varchar2
+
+Create a function named 'findTotalUnit' which takes meterNumber as its input parameter with varchar as its datatype  and  it returns the average total units consumed by the meter number for a month.
+
+Hints:
+Function name: findTotalUnit
+Input parameter: meterNumber is type of varchar
+
+Design Rules:
+If the meterNumber passed as input matches with the meter_number in the table then it returns the average total units for the given input.
