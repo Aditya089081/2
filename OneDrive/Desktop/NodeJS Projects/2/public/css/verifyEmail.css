@@ -1,0 +1,138 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4f9, #dce7f5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 80px; /* space for navbar */
+}
+
+/* Main card */
+.email-card {
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.email-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Status messages */
+.status {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.status.logged {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+.status.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+/* Email info */
+.email-box p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Buttons */
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.generate-btn:hover {
+  background: #1e40af;
+}
+
+.verify-btn {
+  background: #10b981;
+  color: #fff;
+}
+
+.verify-btn:hover {
+  background: #059669;
+}
+
+/* Input */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+/* Hide input initially */
+.hidden {
+  display: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .email-card {
+    padding: 25px 20px;
+    margin: 10px;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main class="main-container">
+    
+    <section class="form-section">
+      <h2>Shorten Your URL</h2>
+      <form action="/shorten" method="POST">
+        <label for="url">Enter URL</label>
+        <input type="url" id="url" name="url" placeholder="e.g. https://example.com" required />
+
+        <label for="shorten">Custom Short Code</label>
+        <input type="text" id="shorten" name="shorten" placeholder="e.g. my-link123" />
+
+        <button type="submit">Shorten URL</button>
+      </form>
+
+      <% if (shortUrl) { %>
+        <div id="result">
+          <p>
+            Short URL:
+            <a href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a>
+          </p>
+        </div>
+      <% } %>
+    </section>
+    <section class="links-section">
+      <h2>Your Links</h2>
+      <% if (links && links.length > 0) { %>
+        <div class="links-container">
+          <% links.forEach(link => { %>
+            <div class="link-box">
+              <a href="/<%= link.shortcode %>" target="_blank" class="short-url">
+                /<%= link.shortcode %>
+              </a>
+              <span class="arrow">→</span>
+              <span class="original-url"><%= link.url %></span>
+
+              <div class="link-actions">
+                <button class="btn copy-btn" onclick="copyToClipboard('/<%= link.shortcode %>')">Copy</button>
+                
+                <a href="/edit/<%= link.id %>" class="btn edit-btn">Edit</a>
+                <form action="/delete/<%=link.id%>" method="POST">
+                  <button class="delete-btn">
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p>You haven't created any links yet.</p>
+      <% } %>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(window.location.origin + text).then(() => {
+        alert("Copied: " + window.location.origin + text);
+      });
+    }
+  </script>
+</body>
+</html>

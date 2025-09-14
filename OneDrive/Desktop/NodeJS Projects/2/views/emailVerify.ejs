@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+  <link rel="stylesheet" href="/css/verifyEmail.css">
+  <link rel="stylesheet" href="/css/navbar.css" />
+
+</head>
+<body>
+
+  <div class="email-card">
+    <% if (user) { %>
+      <div class="status logged">✅ Logged in</div>
+      <div class="email-box">
+        <p>Email: <strong><%= user.email %></strong></p>
+        <p>We will send a verification code to this email. Please press the button below.</p>
+      </div>
+      <form action="/profile/varify/email/send-code" method="POST">
+        <button type="submit" class="generate-btn">Generate New Code</button>
+      </form>
+      <form action="/profile/varify/email/verify-code" method="get">
+        <input type="hidden" name="email" value="<%= user.email %>" />
+        <input type="text" name="token" placeholder="Enter verification code" class="verify-in" id="codeInput" />
+        <button type="submit" class="verify-btn" onclick="document.getElementById('codeInput').classList.remove('hidden')">
+          Verify
+        </button>
+      </form>
+
+    <% } else { %>
+      <div class="status error">
+        Not logged in
+      </div>
+      <a href="/login">Login here</a>
+    <% } %>
+  </div>
+</body>
+
+</html>

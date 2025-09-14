@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-brand">URL Shorten</a>
+
+    <div class="navbar-links">
+      <% if (user) { %>
+        <!-- Show profile avatar or default icon -->
+        <a href="/profile" class="nav-link profile-avatar">
+          <img 
+            src="<%= user.avatar ? '/' + user.avatar : 'https://cdn-icons-png.flaticon.com/128/9131/9131529.png' %>" 
+            alt="Profile" 
+            width="32" 
+            height="32" 
+            style="border-radius:50%; object-fit:cover;"
+          >
+        </a>
+
+        <a href="/logout" class="nav-link logout-icon" title="Logout">
+          &#x21AA;
+        </a>
+      <% } else { %>
+        <a href="/register" class="nav-link">Register</a>
+        <a href="/login" class="nav-link">Login</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

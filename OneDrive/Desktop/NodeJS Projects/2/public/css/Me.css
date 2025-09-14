@@ -1,0 +1,182 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #d6e4ff);
+    margin: 0;
+    padding: 0;
+}
+
+/* Profile card styling */
+.profile-card {
+    max-width: 500px;
+    background: #fff;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Profile image */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #4a90e2;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Name */
+.profile-card h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* ID text */
+.profile-card .id {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Description */
+.profile-card .desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+    max-width: 800px;
+    background: #fff;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex container for image and info */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+/* Profile image */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+
+/* Profile details */
+.profile-details h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Description below */
+.desc {
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #444;
+}
+
+.verification-status {
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+        .verified {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .verify-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .verify-link:hover {
+            text-decoration: underline;
+        }
+        .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+/* Blue - Edit */
+.btn-edit {
+    background: #2563eb;
+}
+.btn-edit:hover {
+    background: #1e40af;
+}
+
+/* Green - Change Password */
+.btn-password {
+    background: #10b981;
+}
+.btn-password:hover {
+    background: #047857;
+}
+
+/* Red - Logout */
+.btn-logout {
+    background: #ef4444;
+}
+.btn-logout:hover {
+    background: #b91c1c;
+}

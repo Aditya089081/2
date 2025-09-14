@@ -1,0 +1,68 @@
+<mjml>
+  <mj-head>
+    <mj-preview>Email Verification - Complete Your Signup</mj-preview>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, Arial, sans-serif" />
+      <mj-text font-size="16px" line-height="24px" color="#333" />
+      <mj-button font-size="16px" font-weight="600" border-radius="8px" />
+    </mj-attributes>
+    <mj-style inline="inline">
+      .token-box {
+        background: #f4f4f7;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a1a1a;
+        letter-spacing: 1px;
+        display: inline-block;
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f9fafc">
+    <mj-section padding="40px 0">
+      <mj-column width="100%">
+        <mj-image width="120px" src="https://img.icons8.com/ios-filled/100/1a1a1a/secured-letter.png" alt="Verify Email" />
+        <mj-spacer height="20px" />
+        <mj-text font-size="24px" font-weight="700" align="center" color="#1a1a1a">
+          Verify Your Email Address
+        </mj-text>
+        <mj-text font-size="16px" align="center" color="#555">
+          Thanks for signing up, <b><%= email %></b>! Please verify your email to activate your account.
+        </mj-text>
+
+        <mj-spacer height="20px" />
+        <mj-text align="center">Your verification token is:</mj-text>
+        <mj-text align="center">
+          <span class="token-box"><%= token %></span>
+        </mj-text>
+
+        <mj-spacer height="30px" />
+        <mj-button 
+          href="<%= link %>" 
+          background-color="#4f46e5"
+          color="#ffffff"
+          padding="15px 30px"
+          border-radius="12px"
+        >
+          Verify Email
+        </mj-button>
+
+        <mj-spacer height="20px" />
+        <mj-text font-size="14px" align="center" color="#888">
+          If you did not sign up for this account, you can safely ignore this email.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#111827" padding="20px 0">
+      <mj-column width="100%">
+        <mj-text align="center" color="#9ca3af" font-size="12px">
+          © <%= new Date().getFullYear() %> Your Company. All rights reserved.  
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

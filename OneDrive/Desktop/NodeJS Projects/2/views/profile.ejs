@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.name %> - Profile</title>
+    <link rel="stylesheet" href="/css/Me.css">
+    <link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="profile-card">
+    <div class="profile-header">
+        <% if(user.avatar){ %>
+            <img src="/<%= user.avatar %>" 
+                alt="Profile Picture" class="profile-img">
+        <% } else { %>
+            <img src="https://cdn-icons-png.flaticon.com/128/9131/9131529.png" 
+                 alt="Default Avatar" class="profile-img">
+        <% } %>
+
+        <div class="profile-details">
+            <h2><%= user.name %></h2>
+            <p class="email"><%= user.email %></p>
+            
+            <p class="count">Total Links generated: <%= user.links_count %></p>
+            <p class="createdAt">member since: <%= user.created_at %></p>
+        </div>
+    </div>
+    <div class="verification-status">
+            <p>Email Verified: 
+            <% if(user.is_email_valid) { %>
+                <span class="verified">✓ Verified</span>
+            <% } else { %>
+                <a href="/profile/verify/email" class="verify-link">Verify Now</a>
+            <% } %>
+            </p>
+        </div>
+        <p class="desc">
+            A motivated person is characterized by their drive to achieve goals, 
+        their proactive nature, and their resilience in the face of challenges. 
+        They possess a strong sense of purpose, are willing to take risks, and 
+        exhibit enthusiasm and dedication to their tasks. These individuals are 
+        often self-aware, adaptable, and committed to continuous learning and growth.
+    </p>
+</div>
+<div class="action-buttons">
+<a href="/profile/edit" class="btn btn-edit">✏️ Edit Profile</a>
+<% if(user.passwordHash){%>
+    <a href="/profile/reset-password" class="btn btn-password">🔑 reset Password</a>
+<%}else {%>
+    <a href="/profile/set-password" class="btn btn-password">🔑 Set Password</a>
+<%}%>
+<a href="/logout" class="btn btn-logout">⏻ Logout</a>
+</div>
+
+</body>
+</html>
